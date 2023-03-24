@@ -28,7 +28,7 @@ const compressVideo = async(request,response,next)=>{
         return response.status(404).json({status:"error",message:"cannot find video "});
     }
     const uploadPath = path.join(__dirname,'..','/videos/',fileName);
-    var outStream = fs.createWriteStream(String(path.join(__dirname,'..','/videos/compression/',fileName)));
+    // var outStream = fs.createWriteStream(String(path.join(__dirname,'..','/videos/compression/',fileName)));
     const move = video.mv(uploadPath,function(error){
         if(error){
             return response.status(400).json({status:"error",message:error});
