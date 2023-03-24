@@ -5,10 +5,16 @@ const ffmpeg =require("fluent-ffmpeg");
 const command = new ffmpeg();
 const path = require("path");
 const fs = require("fs");
+
+//let's create a function for downloading our compressed fie:
 const downloadVideo = async(request,response,next)=>{
-    console.log("loading...........")
+    const filename = request.headers.filename;
+    const getFile = fs.ReadStream();
+    console.log(filename);
 };
 
+
+//let's create a function for compressing the UHD file to HD?!:
 const compressVideo = async(request,response,next)=>{
     //let's create unique name for our files
     let i = 0;
