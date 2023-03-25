@@ -6,6 +6,12 @@ const compressRoute = require("./routes/routes");
 const app = express();
 const port = process.env.PORT || 8000;
 
+//let's create cors option
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
 //let's use some middlewares
 app.use(cors());
 
